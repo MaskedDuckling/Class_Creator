@@ -2,17 +2,19 @@ touch $1.hpp
 echo "#ifndef ${1^^}_HPP
 #define ${1^^}_HPP
 
+#include <iostream>
+
 class $1
 {
-  private:
-  
-  public:
-       $1();
-       $1($1 const & ref);
+private:
+	
+public:
+	$1();
+	$1($1 const & ref);
 
-       ~$1();
+	~$1();
 
-       $1 &operator=($1 const & rhs);
+	$1 &operator=($1 const & rhs);
 };
 
 #endif" >> $1.hpp
@@ -22,6 +24,7 @@ echo "#include \"$1.hpp\"
 
 /**********************[Constructeur]**********************/
 $1::$1(){
+
 }
 
 $1::$1($1 const & rhs){
@@ -31,11 +34,13 @@ $1::$1($1 const & rhs){
 /**********************[Destructeur]**********************/
 
 $1::~$1(){
+
 }
 
 /**********************[Operateur]**********************/
 
 $1 &$1::operator=($1 const & rhs){
+
 }
 
 " >> $1.cpp
